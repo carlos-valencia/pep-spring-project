@@ -8,7 +8,6 @@ import com.example.service.*;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,7 +27,6 @@ import org.springframework.web.bind.annotation.RestController;
  @RestController
 public class SocialMediaController {
 
-    
     private AccountService accountService;
     private MessageService messageService;
 
@@ -38,6 +36,12 @@ public class SocialMediaController {
         this.messageService = messageService;
     }
 
+    
+    /**
+     * Handler for user registration, sets status and body based on valid details entered
+     * @param account
+     * @return ResponseEntity
+     */
     @PostMapping("/register")
     public ResponseEntity registerUser(@RequestBody Account account) {
         try {
@@ -54,6 +58,11 @@ public class SocialMediaController {
         
     }
 
+    /**
+     * Handler for user login, sets status and body based on proper authorization
+     * @param account
+     * @return ResponseEntity
+     */
     @PostMapping("/login")
     public ResponseEntity loginUser(@RequestBody Account account) {
         Account matchingAccount = accountService.getMatchingAccount(account);
@@ -66,6 +75,11 @@ public class SocialMediaController {
         
     }
 
+    /**
+     * Handler for creating message, sets status and body based on valid message and poster account
+     * @param message
+     * @return ResponseEntity
+     */
     @PostMapping("/messages")
     public ResponseEntity createMessage(@RequestBody Message message) {
         
@@ -85,18 +99,32 @@ public class SocialMediaController {
         }
     }
 
+    /**
+     * Handler for retrieving all messages, will always set status to 200, can result in body of null if empty
+     * @return ResponseEntity
+     */
     @GetMapping("/messages")
     public ResponseEntity retrieveAllMessages() {
         List<Message> messages = messageService.getAllMessages();
         return ResponseEntity.status(200).body(messages);
     }
 
+    /**
+     * Handler for retrieving message by id, will always set status to 200, can result in body of null if nonexisting message
+     * @param message_id
+     * @return ResponseEntity
+     */
     @GetMapping("/messages/{message_id}")
     public ResponseEntity retrieveMessageById(@PathVariable int message_id) {
         Message message = messageService.getMessageById(message_id);
         return ResponseEntity.status(200).body(message);
     }
 
+    /**
+     * Handler for deleting message, will always set status to 200, will set body based on success of operation
+     * @param message_id
+     * @return ResponseEntity
+     */
     @DeleteMapping("/messages/{message_id}")
     public ResponseEntity deleteMessage(@PathVariable int message_id) {
         boolean success = messageService.deleteMessage(message_id);
@@ -108,6 +136,12 @@ public class SocialMediaController {
         }
     }
 
+    /**
+     * Handler for updating message, will set status and body based on success of operation
+     * @param message
+     * @param messageId
+     * @return ResponseEntity
+     */
     @PatchMapping("/messages/{messageId}")
     public ResponseEntity updateMessage(@RequestBody Message message, @PathVariable int messageId) {
         Message updatedMessage = messageService.updateMessage(messageId, message);
@@ -119,6 +153,11 @@ public class SocialMediaController {
         }
     }
 
+    /**
+     * Handler for retrieving all messages by user, will always set status to 200, can result in body of null if empty
+     * @param accountId
+     * @return ResponseEntity
+     */
     @GetMapping("/accounts/{accountId}/messages")
     public ResponseEntity retrieveMessagesByUser(@PathVariable int accountId) {
         Account poster = accountService.getAccountById(accountId);
