@@ -1,4 +1,4 @@
-package com.example;
+package com.FormulaFan;
 
 import java.io.IOException;
 import java.net.URI;
@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 
-import com.example.entity.Message;
+import com.FormulaFan.entity.Message;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class CreateMessageTest {	

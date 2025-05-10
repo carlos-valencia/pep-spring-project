@@ -1,4 +1,4 @@
-package com.example.exception;
+package com.FormulaFan.exception;
 
 /**
  * This class defines a custom exception that is thrown when a user tries to register with an existing username

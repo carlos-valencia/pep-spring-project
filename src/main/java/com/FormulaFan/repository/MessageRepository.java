@@ -1,8 +1,8 @@
-package com.example.repository;
+package com.FormulaFan.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.entity.Message;
+import com.FormulaFan.entity.Message;
 
 /**
  * This class defines an interface to be used to connect the service layer and database, for the Message entity

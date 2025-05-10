@@ -1,7 +1,7 @@
-package com.example.repository;
+package com.FormulaFan.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.entity.Account;
+import com.FormulaFan.entity.Account;
 
 /**
  * This class defines an interface to be used to connect the service layer and database, for the Account entity

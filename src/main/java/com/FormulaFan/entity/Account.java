@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.FormulaFan.entity;
 
 import javax.persistence.*;
 
@@ -99,7 +99,7 @@ public class Account {
     /**
      * Overriding the default equals() method adds functionality to tell when two objects are identical, allowing
      * Assert.assertEquals and List.contains to function.
-     * @param o the other object.
+     * @param obj the other object.
      * @return true if o is equal to this object.
      */
 	@Override

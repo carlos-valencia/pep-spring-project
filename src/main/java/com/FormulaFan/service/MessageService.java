@@ -1,7 +1,7 @@
-package com.example.service;
+package com.FormulaFan.service;
 
-import com.example.entity.Message;
-import com.example.repository.MessageRepository;
+import com.FormulaFan.entity.Message;
+import com.FormulaFan.repository.MessageRepository;
 
 import java.util.List;
 import java.util.Optional;

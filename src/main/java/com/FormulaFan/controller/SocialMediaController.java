@@ -1,9 +1,9 @@
-package com.example.controller;
+package com.FormulaFan.controller;
 
-import com.example.entity.Account;
-import com.example.entity.Message;
-import com.example.exception.DuplicateAccountException;
-import com.example.service.*;
+import com.FormulaFan.entity.Account;
+import com.FormulaFan.entity.Message;
+import com.FormulaFan.exception.DuplicateAccountException;
+import com.FormulaFan.service.*;
 
 import java.util.List;
 
@@ -73,6 +73,15 @@ public class SocialMediaController {
             return ResponseEntity.status(401).body(null);
         }
         
+    }
+
+    /**
+     * Sample handler to test app usage from web browser
+     * @return ResponseEntity
+     */
+    @GetMapping("/login")
+    public ResponseEntity sampleLogin() {
+        return ResponseEntity.status(200).body("Hello World");
     }
 
     /**

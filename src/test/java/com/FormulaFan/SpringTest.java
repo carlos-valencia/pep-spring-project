@@ -1,12 +1,12 @@
-package com.example;
+package com.FormulaFan;
 
-import com.example.controller.SocialMediaController;
-import com.example.entity.Account;
-import com.example.entity.Message;
-import com.example.repository.AccountRepository;
-import com.example.repository.MessageRepository;
-import com.example.service.AccountService;
-import com.example.service.MessageService;
+import com.FormulaFan.controller.SocialMediaController;
+import com.FormulaFan.entity.Account;
+import com.FormulaFan.entity.Message;
+import com.FormulaFan.repository.AccountRepository;
+import com.FormulaFan.repository.MessageRepository;
+import com.FormulaFan.service.AccountService;
+import com.FormulaFan.service.MessageService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

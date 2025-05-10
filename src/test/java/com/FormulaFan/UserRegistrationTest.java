@@ -1,4 +1,4 @@
-package com.example;
+package com.FormulaFan;
 
 import java.io.IOException;
 

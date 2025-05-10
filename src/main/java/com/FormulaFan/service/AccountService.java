@@ -1,8 +1,8 @@
-package com.example.service;
+package com.FormulaFan.service;
 
-import com.example.entity.Account;
-import com.example.exception.DuplicateAccountException;
-import com.example.repository.AccountRepository;
+import com.FormulaFan.entity.Account;
+import com.FormulaFan.exception.DuplicateAccountException;
+import com.FormulaFan.repository.AccountRepository;
 
 import java.util.Optional;
 import org.springframework.stereotype.Service;
